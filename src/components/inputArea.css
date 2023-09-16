@@ -21,7 +21,8 @@
   padding: 10px;
   font-size: 22px;
   font-weight: 900;
-  border-top-left-radius: 14px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .textarea {
@@ -29,7 +30,8 @@
   border-style: none;
   padding: 10px;
   font-size: 16px;
-  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   resize: none;
   overflow: hidden;
 }
@@ -37,7 +39,7 @@
 .add {
   border: none;
   font-size: 28px;
-  background-color: rgb(244 180 0);
+  background-color: #f4b400;
   color: white;
   font-weight: 900;
   width: 40px;
@@ -51,9 +53,14 @@
 }
 
 .add:hover {
-  background-color: red;
+  background-color: #bababa;
 }
 
 .add:active {
   background-color: #13a513;
+}
+
+.shadow {
+  box-shadow: 0px 0px 12px #767676;
+  border-radius: 10px;
 }
