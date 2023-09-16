@@ -1,0 +1,55 @@
+.box {
+  margin-top: 43px;
+  min-height: 150px;
+  width: 380px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: none;
+}
+
+.input {
+  width: 100%;
+  border-style: none;
+  height: 51px;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  border-top-left-radius: 14px;
+}
+
+.textarea {
+  width: 100%;
+  border-style: none;
+  padding: 10px;
+  font-size: 16px;
+  border-bottom-right-radius: 14px;
+  resize: none;
+  overflow: hidden;
+}
+
+.add {
+  border: none;
+  font-size: 28px;
+  background-color: rgb(244 180 0);
+  color: white;
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  text-align: center;
+  position: relative;
+  top: -12px;
+  left: 8px;
+  cursor: pointer;
+}
+
+.add:hover {
+  background-color: #13a513;
+}
