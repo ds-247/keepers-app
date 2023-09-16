@@ -22,6 +22,7 @@ export default function InputArea({ onAdd }) {
     if (newKeep.title === "" && newKeep.content === "") return;
     onAdd(newKeep);
     setNewKeep({ title: "", content: "" });
+    setFocused(false);
   }
 
   return (
