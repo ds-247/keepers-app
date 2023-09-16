@@ -1,0 +1,39 @@
+/* navbar  */
+
+@media screen and (max-width: 768px) {
+  .App-header {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .App-header h1 {
+    margin-left: 0;
+  }
+}
+
+/* textarea  */
+
+@media screen and (max-width: 450px) {
+  .box {
+    width: 300px;
+  }
+}
+
+/* notes  */
+@media screen and (min-width: 595px) and (max-width: 710px) {
+  .note {
+    width: 265px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 594px) {
+  .note {
+    width: 349px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .note {
+    width: 280px;
+  }
+}

@@ -12,6 +12,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import "./App.css";
+import "./App-responsive.css";
 
 function App() {
   const [keep, setKeep] = useState([]);
@@ -43,7 +44,6 @@ function App() {
       console.log(ex, "error while adding keep");
     }
   };
-
 
   const handleDelete = async (id) => {
     // deleteDoc takes the object which you want to delete
