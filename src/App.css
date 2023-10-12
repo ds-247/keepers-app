@@ -64,3 +64,17 @@
 .rounded {
   border-radius: 10px;
 }
+
+.user-icon-wrapper {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user-icon-wrapper p {
+  font-size: 8px;
+}

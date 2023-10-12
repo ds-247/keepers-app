@@ -2,8 +2,12 @@ import React from "react";
 import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import TipsAndUpdatesTwoToneIcon from "@mui/icons-material/TipsAndUpdatesTwoTone";
+import Face2Icon from "@mui/icons-material/Face2";
+import { signOut } from "firebase/auth";
 
-function Header() {
+import { auth } from "../config/firebase";
+
+function Header({ loggedIn }) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const headerStyle = {
@@ -19,16 +23,29 @@ function Header() {
         />
         Keeper
       </h1>
+      {loggedIn && (
+        <div className="user-icon-wrapper">
+          <Face2Icon
+            sx={{ height: "35px", width: "35px" }}
+            onClick={() =>
+              signOut(auth)
+                .then(() => (window.location = "/"))
+                .catch((ex) => console.log("error while logging out user..."))
+            }
+          />
+          <p>Logout</p>
+        </div>
+      )}
     </header>
   );
 }
 
 const theme = createTheme();
 
-export default function ThemeHelper() {
+export default function ThemeHelper({ loggedIn }) {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
+      <Header loggedIn={loggedIn} />
     </ThemeProvider>
   );
 }

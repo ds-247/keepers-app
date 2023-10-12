@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Note from "./components/Note";
 import InputArea from "./components/InputArea";
-import { db } from "./config/firebase";
+import { db, auth } from "./config/firebase";
 import {
   getDocs,
   collection,
@@ -17,7 +16,10 @@ import "./App-responsive.css";
 function App() {
   const [keep, setKeep] = useState([]);
 
-  const keepsCollectionRef = collection(db, "keeps");
+  const keepsCollectionRef = collection(
+    db,
+    `/Test/${auth.currentUser.email}/keeps`
+  );
 
   useEffect(() => {
     const getKeepsList = async () => {
@@ -46,9 +48,10 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    // deleteDoc takes the object which you want to delete
     try {
-      const keepObj = doc(db, "keeps", id);
+      const keepObj = doc(db, `/Test/${auth.currentUser.email}/keeps`, id);
+      console.log(keepObj);
+      console.log(id);
       await deleteDoc(keepObj);
       setKeep((prevValue) => prevValue.filter((k) => k.id !== id));
     } catch (ex) {
@@ -57,8 +60,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
+    <>
       <div className="col">
         <InputArea onAdd={handleAdd} />
         <div className="row">
@@ -76,7 +78,7 @@ function App() {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

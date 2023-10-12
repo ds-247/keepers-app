@@ -5,11 +5,6 @@ export default function InputArea({ onAdd }) {
   const [newKeep, setNewKeep] = useState({ title: "", content: "" });
   const [isFocused, setFocused] = useState(false);
 
-  function handleFocus() {
-    console.log("handle focus triggered..");
-    setFocused(true);
-  }
-
   function handleChange(e) {
     const { name, value } = e.target;
     setNewKeep((prevValue) => {
@@ -25,6 +20,10 @@ export default function InputArea({ onAdd }) {
     setFocused(false);
   }
 
+  function handleInputClick() {
+    setFocused(true);
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="box">
@@ -33,7 +32,7 @@ export default function InputArea({ onAdd }) {
             type="text"
             className="input shadow rounded"
             placeholder="Keep..."
-            onClick={handleFocus}
+            onClick={handleInputClick}
           />
         )}
         {isFocused && (
